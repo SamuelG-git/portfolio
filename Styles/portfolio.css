@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 * {
   margin: 0;
   padding: 0;
@@ -12,8 +15,8 @@ body {
 
 /* Header */
 .hero {
-  background: url(/Images/design.png) no-repeat center center/cover;
-  color: #ffffff;
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), 
+              url(/Images/design.png) no-repeat center center/cover;  color: #ffffff;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -184,13 +187,13 @@ body {
   width: 30%;
   margin: 0 1%;
   text-align: center;
- 
+  transition: scale 250ms ease-in-out;
   font-size: larger;
 }
 
 .service-icon {
   font-size: 3em;
-  color: #ff6f61;
+  color: #ffffff;
   margin-bottom: 15px;
 }
 
@@ -202,6 +205,10 @@ body {
 .service-box p {
   color: #fff8f8;
   font-family: arial;
+}
+.service-box:hover{
+  scale: 1.1;
+  cursor: pointer;
 }
 
 /* Portfolio Section */
@@ -231,12 +238,15 @@ body {
   position: relative;
   overflow: hidden;
   border-radius: 10px;
+  cursor: pointer;
+  transition: opacity 500ms ease-in-out;
 }
 
 .portfolio-item img {
   width: 100%;
   height: auto;
   display: block;
+  transition: scale 500ms ease-in-out;
 }
 
 .portfolio-overlay {
@@ -251,17 +261,21 @@ body {
   justify-content: center;
   align-items: center;
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity 500ms ease-in-out;
 }
 
 .portfolio-item:hover .portfolio-overlay {
   opacity: 1;
 }
-
+.portfolio-item:hover img{
+  scale: 1.1;
+}
 .portfolio-overlay h3 {
   font-size: 1.5em;
 }
-
+header a:hover{
+  color: rgb(212, 212, 212);
+}
 /* Team Section */
 .team {
   padding: 60px 20px;
